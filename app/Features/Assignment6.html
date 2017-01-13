@@ -1,0 +1,20 @@
+
+
+		
+			<table border="1" width="20%">
+				<tr>
+					<th>Check</th>
+					<th>Order</th>
+					<th>Price</th>
+				</tr>
+				<tr ng-repeat="detail in details" ng-click=""> 
+					<td><input type="checkbox" ng-model="detail.ischecked" ng-click="addRow(detail)"></td>
+                    <td>{{detail.OrderName}}</td>
+					<td>{{detail.price}}</td>
+                            <td>{{detail.ischecked}}</td>
+				</tr>
+                <tr>
+                    <td>
+               Total:</td><td>{{result}}</td></tr> 
+			</table>
+		</div>

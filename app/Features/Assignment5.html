@@ -1,0 +1,76 @@
+
+<form  name="myForm" novalidate>
+
+<p>Firstname:<br>
+<input type="text" name="firstname" ng-model="firstname" required>
+<span style="color:red" ng-show="myForm.firstname.$dirty && myForm.firstname.$invalid">
+<span ng-show="myForm.firstname.$error.required">Enter First Name.</span>
+</span>
+</p>
+
+<p>Lastname:<br>
+<input type="text" name="lastname" ng-model="lastname" required>
+<span style="color:red" ng-show="myForm.lastname.$dirty && myForm.lastname.$invalid">
+<span ng-show="myForm.lastname.$error.required">Enter Last Name.</span>
+</span>
+</p>
+
+<p>Email:<br>
+<input type="email" name="email" ng-model="email" required>
+<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+<span ng-show="myForm.email.$error.required">Enter Email.</span>
+<span ng-show="myForm.email.$error.email">Invalid email.</span>
+</span>
+</p>
+
+<p>Phone Number:<br>
+<input type="number" name="phoneNo" ng-model="PhoneNo" required>
+<span style="color:red" ng-show="myForm.phoneNo.$dirty && myForm.phoneNo.$invalid">
+<span ng-show="myForm.phoneNo.$error.required">Enter Phone.no .</span>
+</span>
+</p>
+<P>
+ Gender:
+<select ng-model="optionlist1" name="optionlist1">
+    <option value="">
+    <option value="male">Male
+    <option value="female">Female
+</select>
+</P>
+
+<P>
+ Location:
+<select ng-model="optionlist2" name="optionlist2">
+    <option value="">
+    <option value="Pune">Pune
+    <option value="mumbai">Mumbai
+    <option value="nasik">Nashik
+    <option value="nagar">Nagar
+</select>
+</P>
+<p>
+    
+<input type="submit" 
+ng-disabled="myForm.firstname.$dirty && myForm.firstname.$invalid ||  myForm.lastname.$dirty && myForm.lastname.$invalid||
+myForm.email.$dirty && myForm.email.$invalid ||myForm.phoneNo.$dirty && myForm.phoneNo.$invalid " || ng-click ="addDetails()" >
+
+<button type="reset">reset</button>
+</p>
+<table border="1" width="100%" >
+<tr>
+<th>FirstName</th>
+<th>LastName</th>
+<th>Email</th>
+<th>Contact</th>
+<th>Gender</th>
+<th>Location</th>
+</tr>
+<tr >
+<td ng-repeat="detail in details ">{{detail}}</td>
+
+
+
+</tr>
+</table>
+
+

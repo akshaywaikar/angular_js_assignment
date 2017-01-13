@@ -1,0 +1,20 @@
+
+<p>Click the table headers to change the sorting order:</p>
+
+
+Search : <input type="text" ng-model="searchthing">
+<table border="1" width="100%">
+<tr>
+<th ng-click="orderByMe('id')">Id</th>
+<th ng-click="orderByMe('name')">Name</th>
+<th ng-click="orderByMe('technology')">Technology</th>
+
+</tr>
+<tr ng-repeat="detail in details | orderBy:myOrderBy | filter: searchthing">
+<td>{{detail.id}}</td>
+<td>{{detail.name}}</td>
+<td>{{detail.technology}}</td>
+</tr>
+</table>
+
+</div>
